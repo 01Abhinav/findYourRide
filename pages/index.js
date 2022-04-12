@@ -1,7 +1,7 @@
 import Link from "next/link";
 import axios from "axios";
 import styles from "../styles/Home.module.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Header from "../components/header";
@@ -14,7 +14,7 @@ export default function Home(props) {
   const [filter, setFilter] = useState({});
   const [ridesArr, setRidesArr] = useState([]);
   const userStationCode = user.station_code;
-  console.log(userStationCode);
+  // console.log(userStationCode);
 
   const upcomingRides = rides?.filter((ride) => {
     const currDate = new Date();
@@ -31,18 +31,21 @@ export default function Home(props) {
   const states = [...new Set(rides?.map((ride) => ride.state))];
 
   useEffect(() => {
+    const _ridesArr = ridesArr.filter((ride) => {
+      // console.log(ride, ride[filter.name], filter.value);
+      if (ride[filter.name] == filter.value) {
+        return true;
+      } else return false;
+    });
+    setRidesArr(_ridesArr);
+    console.log(_ridesArr);
+  }, [filter]);
+
+  useEffect(() => {
     if (selected === "Upcoming Rides") setRidesArr(upcomingRides);
     else if (selected === "Past Rides") setRidesArr(pastRides);
     else setRidesArr(rides);
-  });
-
-  useEffect(() => {
-    const _ridesArr = ridesArr.filter(
-      (ride) => ride[filter.name] === filter.value
-    );
-    setRidesArr(_ridesArr);
-    console.log(filter);
-  }, [filter]);
+  }, [selected]);
 
   return (
     <div className={styles.container}>

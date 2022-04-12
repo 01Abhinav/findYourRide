@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  background-color: rgb(43, 42, 42);
+  background: rgb(45, 45, 46);
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -17,6 +17,38 @@ a {
 }
 .navbar-toggler .active {
   border-bottom: 1px solid white;
+}
+.loc-back {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 4px 10px;
+
+  position: absolute;
+  width: 80px;
+  height: 23px;
+  left: 1111px;
+  top: 191px;
+
+  background: rgba(0, 0, 0, 0.56);
+  border-radius: 16px;
+}
+.card-like {
+  position: absolute;
+  width: 1280px;
+  height: 198px;
+  left: calc(50% - 1280px / 2);
+  top: calc(50% - 198px / 2 - 120px);
+
+  background: #171717;
+  border-radius: 10px;
+}
+.img-like {
+  position: absolute;
+  width: 296px;
+  height: 148px;
+  left: calc(50% - 296px / 2 - 463px);
+  top: calc(50% - 148px / 2 - 123px);
 }
 
 .filter-body {
@@ -158,4 +190,20 @@ body {
   z-index: 9;
   transform: translate(100%, 0);
   pointer-events: none;
+}
+.border-style {
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.card-back {
+  background-color: #171717 !important;
+}
+
+.header-back {
+  background-color: #101010 !important;
+  height: 84px !important;
+}
+.navbar-back {
+  background: rgb(45, 45, 46);
 }

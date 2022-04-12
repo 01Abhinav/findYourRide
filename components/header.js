@@ -1,6 +1,6 @@
 export default function Header({ user }) {
   return (
-    <div className="flex-row d-flex justify-content-between bg-black text-light p-3">
+    <div className="flex-row d-flex justify-content-between header-back bg-black text-light p-3">
       <div>
         <h2>Edvora</h2>
       </div>
@@ -10,7 +10,7 @@ export default function Header({ user }) {
           <img
             className="rounded-circle mx-2"
             src={user.url}
-            width="50px"
+            width="44px"
           ></img>
         </div>
       </div>

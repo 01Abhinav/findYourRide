@@ -6,7 +6,7 @@ export default function CardHolder({ rides }) {
     <div className="card-deck p-2 my-3 ">
       {rides?.map((ride) => (
         <div
-          className="card flex-row d-flex mx-5 my-2 bg-dark text-light"
+          className="card-back card flex-row d-flex mx-5 my-2 text-light"
           key={ride.id + ride.date}
         >
           <img
@@ -26,9 +26,13 @@ export default function CardHolder({ rides }) {
             <div className="card-text">Date: {ride.date}</div>
             <div className="card-text">Distance: {ride.distance}</div>
           </div>
-          <div className="d-flex flex-row fs-6">
-            <div className="bg-black h-25 px-1">{ride.city}</div>
-            <div className="bg-black h-25 px-1">{ride.state}</div>
+          <div className="fs-6 d-flex flex-row ">
+            <div className="bg-black h-25 px-2 py-2 m-3 border-style">
+              {ride.city}
+            </div>
+            <div className="bg-black h-25 px-2 py-2 m-3 border-style">
+              {ride.state}
+            </div>
           </div>
         </div>
       ))}

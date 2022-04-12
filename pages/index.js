@@ -60,9 +60,6 @@ export default function Home(props) {
         states={states}
       />
       <CardHolder rides={ridesArr} loc={userStationCode} />
-      <footer className={styles.footer}>
-        <Link href="/temp">made by abhinav</Link>
-      </footer>
     </div>
   );
 }

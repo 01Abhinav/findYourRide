@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FilterDropdown from "./filterDropdown";
+import { Link } from "next/link";
 export default function Navbar({ selected, setSelected, numArr, ...rest }) {
   const [toggleFilter, setToggleFilter] = useState(false);
 
@@ -12,7 +13,7 @@ export default function Navbar({ selected, setSelected, numArr, ...rest }) {
   // console.log(numArr);
 
   return (
-    <div className="sticky-top flex-row d-flex justify-content-between bg-dark text-light p-3">
+    <div className="sticky-top flex-row d-flex navbar-back justify-content-between text-light p-3">
       <div className="d-flex flex-row justify-content-between w-25">
         {headings.map(({ name, len }) => (
           <button

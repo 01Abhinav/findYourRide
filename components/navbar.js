@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FilterDropdown from "./filterDropdown";
 import { Link } from "next/link";
+
 export default function Navbar({ selected, setSelected, numArr, ...rest }) {
   const [toggleFilter, setToggleFilter] = useState(false);
 
@@ -30,13 +31,16 @@ export default function Navbar({ selected, setSelected, numArr, ...rest }) {
           </button>
         ))}
       </div>
+      <div>
+        <img src="/Vector.svg" alt="svg" />
+        <button
+          className="navbar-toggler text-light"
+          onClick={() => setToggleFilter(!toggleFilter)}
+        >
+          Filter
+        </button>
+      </div>
 
-      <button
-        className="navbar-toggler text-light"
-        onClick={() => setToggleFilter(!toggleFilter)}
-      >
-        Filter
-      </button>
       {toggleFilter && <FilterDropdown toggleFilter={toggleFilter} {...rest} />}
     </div>
   );

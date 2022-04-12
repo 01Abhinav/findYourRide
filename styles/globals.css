@@ -210,3 +210,16 @@ body {
 .info {
   color: #cfcfcf;
 }
+.underline {
+  text-decoration: underline;
+}
+.tog-select {
+  background-color: rgb(45, 45, 46); /* Green */
+  border: none;
+  color: white;
+  margin: 0px 10px 0px 10px;
+  text-align: center;
+
+  display: inline-block;
+  font-size: 16px;
+}

@@ -15,12 +15,15 @@ export default function Navbar({ selected, setSelected, numArr, ...rest }) {
 
   return (
     <div className="sticky-top flex-row d-flex navbar-back justify-content-between text-light p-3">
-      <div className="d-flex flex-row justify-content-between w-25">
+      <div
+        className="d-flex flex-row justify-content-between w-30"
+        style={{ paddingLeft: "33px" }}
+      >
         {headings.map(({ name, len }) => (
           <button
             key={name}
-            className={`navbar-toggler px-2 text-light ${
-              name === selected ? "active" : ""
+            className={`tog-select  ${
+              name === selected ? "active underline" : ""
             }`}
             onClick={() => setSelected(name)}
           >
@@ -34,7 +37,8 @@ export default function Navbar({ selected, setSelected, numArr, ...rest }) {
       <div>
         <img src="/Vector.svg" alt="svg" />
         <button
-          className="navbar-toggler text-light"
+          className="tog-select "
+          style={{ paddingRight: "33px" }}
           onClick={() => setToggleFilter(!toggleFilter)}
         >
           Filter

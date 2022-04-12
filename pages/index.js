@@ -27,20 +27,21 @@ export default function Home(props) {
     return currDate.getTime() > rideDate.getTime();
   });
 
-  const cities = rides?.map((ride) => ride.city);
-  const states = rides?.map((ride) => ride.state);
+  const cities = [...new Set(rides?.map((ride) => ride.city))];
+  const states = [...new Set(rides?.map((ride) => ride.state))];
 
   useEffect(() => {
     if (selected === "Upcoming Rides") setRidesArr(upcomingRides);
     else if (selected === "Past Rides") setRidesArr(pastRides);
     else setRidesArr(rides);
-  }, [selected, props]);
+  });
 
   useEffect(() => {
     const _ridesArr = ridesArr.filter(
-      (ride) => ride[filter.type] === filter.value
+      (ride) => ride[filter.name] === filter.value
     );
     setRidesArr(_ridesArr);
+    console.log(filter);
   }, [filter]);
 
   return (

@@ -7,7 +7,7 @@ export default function CardHolder({ rides }) {
       {rides?.map((ride) => (
         <div
           className="card flex-row d-flex mx-5 my-2 bg-dark text-light"
-          key={ride.id}
+          key={ride.id + ride.date}
         >
           <img
             className="card-img-top w-25"

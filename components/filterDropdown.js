@@ -5,7 +5,7 @@ export default function FilterDropdown({
   cities,
   states,
 }) {
-  const dropdown = (data, label) => (
+  const dropdown = (data, label, name) => (
     <div className="wrapper">
       <div className="jumbotron">
         <label className="drop">
@@ -13,15 +13,24 @@ export default function FilterDropdown({
           <span className="control">{label}</span>
 
           <ul className="drop-items">
-            {data.map((val) => (
-              <li className="item-drop">
-                <a target="_blank" href="https://codepen.io/robsonklein23">
-                  {val}
-                </a>
+            {data.map((value) => (
+              <li className="item-drop" key={value}>
+                <button
+                  className="btn"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setFilter({ name, value });
+                  }}
+                >
+                  {value}
+                </button>
               </li>
             ))}
           </ul>
-          <label for="target-drop-example" className="overlay-close"></label>
+          <label
+            htmlFor="target-drop-example"
+            className="overlay-close"
+          ></label>
         </label>
       </div>
     </div>
@@ -33,8 +42,8 @@ export default function FilterDropdown({
         className="filter-body bg-dark  "
       >
         <div>Filters</div>
-        {dropdown(states, "States")}
-        {dropdown(cities, "Cities")}
+        {dropdown(states, "States", "state")}
+        {dropdown(cities, "Cities", "city")}
       </div>
     </div>
   );

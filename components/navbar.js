@@ -37,7 +37,7 @@ export default function Navbar({ selected, setSelected, numArr, ...rest }) {
       <div>
         <img src="/Vector.svg" alt="svg" />
         <button
-          className="tog-select "
+          className="tog-select mx-2"
           style={{ paddingRight: "33px" }}
           onClick={() => setToggleFilter(!toggleFilter)}
         >

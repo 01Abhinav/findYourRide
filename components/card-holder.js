@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function CardHolder({ rides }) {
   return (
-    <div className="card-deck p-2 my-3 ">
+    <div className="card-deck">
       {rides?.map((ride) => (
         <div
           className="card-back card flex-row d-flex mx-5 my-2 text-light"
@@ -38,12 +38,8 @@ export default function CardHolder({ rides }) {
             </div>
           </div>
           <div className="fs-6 d-flex flex-row ">
-            <div className="bg-black h-25 px-2 py-2 m-3 border-style">
-              {ride.city}
-            </div>
-            <div className="bg-black h-25 px-2 py-2 m-3 border-style">
-              {ride.state}
-            </div>
+            <div className="px-2 m-2 border-style">{ride.city}</div>
+            <div className="px-2 m-2 border-style">{ride.state}</div>
           </div>
         </div>
       ))}
